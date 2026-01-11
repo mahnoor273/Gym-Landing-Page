@@ -4,17 +4,25 @@ import { FiClock } from "react-icons/fi";
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-10 px-6 md:px-16">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-10">
+    <footer className="bg-black text-white py-10 px-6 sm:px-10 md:px-16">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
 
         {/* === Quick Links === */}
-        <div className="ml-10">
+        <div className="md:ml-10">
           <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
           <ul className="space-y-2 text-gray-300">
-            <li><a href="#" className="hover:text-red-500 transition">About Us</a></li>
-            <li><a href="#" className="hover:text-red-500 transition">Services</a></li>
-            <li><a href="#" className="hover:text-red-500 transition">Reviews</a></li>
-            <li><a href="#" className="hover:text-red-500 transition">Contact Us</a></li>
+            <li>
+              <a href="#" className="hover:text-red-500 transition-colors">About Us</a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-red-500 transition-colors">Services</a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-red-500 transition-colors">Reviews</a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-red-500 transition-colors">Contact Us</a>
+            </li>
           </ul>
         </div>
 
@@ -49,10 +57,12 @@ const Footer = () => {
 
       {/* === Footer Bottom === */}
       <div className="border-t border-gray-700 mt-10 pt-4 text-center text-gray-400 text-sm">
-        Copyright © 2025 <span className="text-white font-semibold">Muscle Lift</span>. All rights reserved.
+        Copyright © 2025{" "}
+        <span className="text-white font-semibold">Muscle Lift</span>. All rights reserved.
       </div>
     </footer>
   );
 };
 
 export default Footer;
+

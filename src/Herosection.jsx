@@ -36,7 +36,7 @@ const Herosection = () => {
         <a href="#reviews" className="hover:text-red-500 hover:border-b border-red-600 transition duration-300">
           Reviews
         </a>
-        <a href="#footer" className="hover:text-red-500 hover:border-b border-red-600 transition duration-300">
+        <a href="#contact" className="hover:text-red-500 hover:border-b border-red-600 transition duration-300">
           Contact
         </a>
       </div>

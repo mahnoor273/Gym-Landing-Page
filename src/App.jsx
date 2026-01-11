@@ -24,7 +24,7 @@ const App = () => {
 <section id="trainers"><MeetOurTrainer /></section>
 <section id="reviews"><Customer /></section>
 <GymHeroSection />
-<section id="footer"><Footer /></section>
+<section id="contact"><Footer /></section>
 
 
     </div>
