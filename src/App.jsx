@@ -8,6 +8,8 @@ import Customer from './Customer.jsx'
 import GymHeroSection from './GymHeroSection.jsx'
 import Footer from './Footer.jsx'
 import Herosection from './Herosection.jsx'
+import Aboutus from './Aboutus.jsx'
+
 const App = () => {
   return (
     <div>
