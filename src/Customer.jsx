@@ -1,10 +1,9 @@
 import React from 'react';
-import Review from './assets/Review.png'
-import Review1 from './assets/Review1.png'
-import Review2 from './assets/Review2.png'
-import Review3 from './assets/Review3.png'
+import Review from './assets/Review.png';
+import Review1 from './assets/Review1.png';
+import Review2 from './assets/Review2.png';
+import Review3 from './assets/Review3.png';
 
-// ✅ Review Data Array (renamed to avoid conflict)
 const customerReviews = [
   {
     name: 'Rizwan',
@@ -56,9 +55,16 @@ const customerReviews = [
   },
 ];
 
-// ✅ Reusable Review Card Component
+// ✅ Review Card
 const ReviewCard = ({ review }) => (
-  <div className="bg-black text-white p-4 rounded-xl border border-3 border-white shadow-xl w-100 ml-14">
+  <div
+    className="
+      bg-black text-white p-5 rounded-xl 
+      border-2 border-white shadow-xl
+      w-full max-w-md
+      mx-auto md:mx-0
+    "
+  >
     <div className="flex items-center mb-4">
       <img
         src={review.imageUrl}
@@ -66,35 +72,47 @@ const ReviewCard = ({ review }) => (
         className="w-12 h-12 rounded-full object-cover mr-4"
       />
       <div>
-        <h3 className="text-xl font-bold">{review.name}</h3>
+        <h3 className="text-lg sm:text-xl font-bold">{review.name}</h3>
         <div className="flex items-center text-yellow-400">
           <span className="text-base">★</span>
           <span className="ml-1 text-sm font-medium">{review.rating}</span>
         </div>
       </div>
     </div>
-    <p className="text-base text-gray-300">{review.reviewText}</p>
+
+    <p className="text-sm sm:text-base text-gray-300">
+      {review.reviewText}
+    </p>
   </div>
 );
 
-// ✅ Main Customer Section Component
+// ✅ Main Section
 const Customer = () => {
   return (
-    <section className="bg-black py-10 px-4 sm:px-6 lg:px-8 mt-0">
+    <section className="bg-black py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
 
-      <div className="max-w-7xl mx-auto ">
-        <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-12 ml-14">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-10 text-center md:text-left md:ml-14">
           Reviews
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ml-0">
+        <div
+          className="
+            grid grid-cols-1 
+            md:grid-cols-2 
+            gap-6
+            md:pl-14
+          "
+        >
           {customerReviews.map((review, index) => (
             <ReviewCard key={index} review={review} />
           ))}
         </div>
+
       </div>
     </section>
   );
 };
 
 export default Customer;
+

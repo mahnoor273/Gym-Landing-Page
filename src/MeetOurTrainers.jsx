@@ -2,15 +2,6 @@ import React from 'react';
 import Trainer from './assets/Trainer.png';
 import Trainer1 from './assets/Trainer2.png';
 
-/* 
-==========================================================
-🔹 TRAINER DATA ARRAY
-----------------------------------------------------------
-Yahan aap naye trainers add kar sakte hain.
-Bas ek new object add karein "name", "rating", "description", 
-aur "imageUrl" ke saath.
-==========================================================
-*/
 const trainers = [
   {
     name: 'Fatima',
@@ -26,16 +17,17 @@ const trainers = [
   },
 ];
 
-/* 
-==========================================================
-🔹 REUSABLE TRAINER PROFILE CARD COMPONENT
-----------------------------------------------------------
-Yahan aap card ka design, border color, button color, etc. 
-change kar sakte hain.
-==========================================================
-*/
+// ✅ Trainer Card
 const TrainerProfile = ({ trainer }) => (
-  <div className="bg-black text-white p-6 rounded-xl border-2 border-white shadow-xl w-full mb-10 max-w-sm transition duration-300 hover:border-red-600">
+  <div
+    className="
+      bg-black text-white p-6 rounded-xl
+      border-2 border-white shadow-xl
+      w-full max-w-sm
+      transition duration-300 hover:border-red-600
+      mx-auto md:mx-0
+    "
+  >
     <div className="flex items-center mb-4">
       <img
         src={trainer.imageUrl}
@@ -44,73 +36,46 @@ const TrainerProfile = ({ trainer }) => (
       />
 
       <div>
-        <h3 className="text-2xl font-bold">{trainer.name}</h3>
+        <h3 className="text-xl sm:text-2xl font-bold">{trainer.name}</h3>
         <div className="flex items-center text-yellow-400">
-          <span className="text-xl">★</span>
+          <span className="text-lg sm:text-xl">★</span>
           <span className="ml-1 text-base font-medium">{trainer.rating}</span>
         </div>
       </div>
     </div>
 
-    <p className="text-lg mb-6 text-gray-300">{trainer.description}</p>
+    <p className="text-base sm:text-lg mb-6 text-gray-300">
+      {trainer.description}
+    </p>
 
-    <button className="bg-red-700 hover:bg-red-800 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 ml-52">
-      Train Now
-    </button>
+    <div className="flex justify-center md:justify-end">
+      <button className="bg-red-700 hover:bg-red-800 text-white font-semibold py-2 px-6 rounded-lg transition duration-300">
+        Train Now
+      </button>
+    </div>
   </div>
 );
 
-/* 
-==========================================================
-🔹 MAIN SECTION COMPONENT
-----------------------------------------------------------
-👇👇👇
-Customization points are marked clearly below.
-==========================================================
-*/
+// ✅ Section
 const MeetOurTrainers = () => {
   return (
-
-    
-<section className="bg-black pt-6 pb-4 px-4 sm:px-6 lg:px-8 mb-0">
-
+    <section className="bg-black pt-10 pb-6 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        {/*
-        ==========================================================
-        🔧 CUSTOMIZATION POINT 2:
-        Heading margin-left control — "ml-14"
-        ----------------------------------------------------------
-        Heading ko left ya center karna ho to:
-        - "ml-0" = left aligned
-        - "text-center ml-0" = center aligned
-        - "ml-20" = thoda aur right push karne ke liye
-        ==========================================================
-        */}
-        <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-12 ml-14">
+
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-12 text-center md:text-left md:ml-14">
           Meet Our Trainers
         </h2>
 
-        {/*
-        ==========================================================
-        🔧 CUSTOMIZATION POINT 3:
-        Card alignment aur gap control
-        ----------------------------------------------------------
-        - "justify-start" = left aligned
-        - "justify-center" = center aligned
-        - "gap-8" = cards ke beech ka distance (change to gap-4 or gap-12)
-        - "ml-14" = overall section ka left margin
-        ==========================================================
-        */}
-        <div className="flex flex-col md:flex-row gap-8 justify-start items-center">
-          <div className="flex flex-col md:flex-row gap-8 ml-14">
-            {trainers.map((trainer, index) => (
-              <TrainerProfile key={index} trainer={trainer} />
-            ))}
-          </div>
+        <div className="flex flex-col md:flex-row gap-8 md:pl-14">
+          {trainers.map((trainer, index) => (
+            <TrainerProfile key={index} trainer={trainer} />
+          ))}
         </div>
+
       </div>
     </section>
   );
 };
 
 export default MeetOurTrainers;
+
