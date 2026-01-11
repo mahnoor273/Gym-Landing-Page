@@ -9,6 +9,7 @@ import GymHeroSection from './GymHeroSection.jsx'
 import Footer from './Footer.jsx'
 import Herosection from './Herosection.jsx'
 import Aboutus from './Aboutus.jsx'
+import Services from './Services.jsx'
 
 const App = () => {
   return (
