@@ -14,23 +14,19 @@ import Services from './Services.jsx'
 const App = () => {
   return (
     <div>
-  
 
- 
+<section id="home"><Herosection /></section>
 
+<section id="about"> <Aboutus /> </section>
+<section id="services"><Services /></section>
 
-
-
-<Herosection />
-<Aboutus />
-<Services />
-{/* GymFacility */}
-<GymFacilities />
-
-<MeetOurTrainer />
-<Customer />
+<section id="membership"><GymFacilities /></section>
+<section id="trainers"><MeetOurTrainer /></section>
+<section id="reviews"><Customer /></section>
 <GymHeroSection />
-<Footer />
+<section id="footer"><Footer /></section>
+
+
     </div>
   )
 }
